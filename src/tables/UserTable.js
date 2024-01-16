@@ -17,8 +17,20 @@ const UserTable = (props) => {
               <td>{user.name}</td>
               <td>{user.username}</td>
               <td className='flex gap-2'>
-                <button className="button1">Edit</button>
-                <button className="button1">Delete</button>
+                <button
+                  onClick={() => {
+                    props.editRow(user)
+                  }}
+                  className="button1"
+                >
+                  Edit
+                </button>
+                <button 
+                  onClick={() => props.deleteUser(user.id)}
+                  className="button1"
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))
